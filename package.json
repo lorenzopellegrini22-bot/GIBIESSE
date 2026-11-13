@@ -1,0 +1,15 @@
+{
+  "name": "gibiesse-sedi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pagina link-in-bio Instagram: punti vendita Gibiesse · Niky Scuderi · Marella e collegamento a gibiessestore.it",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs public",
+    "preview": "npm run build && node scripts/serve.mjs dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gibiesse · Niky Scuderi — Le nostre sedi</title>
+<meta name="description" content="Scopri i negozi Gibiesse e Niky Scuderi a Viterbo e Civita Castellana, oppure acquista online su gibiessestore.it">
+<link rel="icon" type="image/webp" href="assets/logo-gb.webp">
+<link rel="apple-touch-icon" href="assets/logo-gb.webp">
+<meta name="theme-color" content="#0e0e0e">
+<meta property="og:title" content="Gibiesse · Niky Scuderi — Le nostre sedi">
+<meta property="og:description" content="8 punti vendita tra Viterbo e Civita Castellana. Shop online su gibiessestore.it">
+<meta property="og:image" content="https://gibiessestore.it/cdn/shop/files/logo-gbs1.png?width=600">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e0e0e; --paper:#f6f3ee; --card:#ffffff; --muted:#7a746b;
+    --line:#e4ded4; --accent:#a8855a; --wa:#1f9d55;
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Lato", system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.5;
+       min-height:100vh;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:520px;margin:0 auto;padding:0 18px 48px}
+
+  /* HERO */
+  .hero{background:var(--ink);color:#fff;text-align:center;padding:44px 24px 64px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 80% at 50% 0%, rgba(168,133,90,.28), transparent 60%);}
+  .hero > *{position:relative}
+  .logo{height:34px;width:auto;filter:invert(1);display:block;margin:0 auto 8px}
+  .logo-fallback{font-family:var(--serif);font-size:34px;letter-spacing:.32em;font-weight:600}
+  .sub{font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:#cfc6b8;margin-top:6px}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.05;margin:30px 0 10px}
+  .hero h1 em{color:var(--accent);font-style:italic}
+  .hero p{color:#bdb5a8;font-size:15px;font-weight:300;max-width:330px;margin:0 auto}
+
+  /* SHOP CTA */
+  .shop{margin:-34px auto 0;position:relative;z-index:2}
+  .btn-main{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    background:var(--card);border:1px solid var(--ink);padding:18px 22px;
+    box-shadow:0 10px 30px -12px rgba(0,0,0,.35);transition:transform .2s, background .2s, color .2s}
+  .btn-main:hover,.btn-main:active{background:var(--ink);color:#fff;transform:translateY(-2px)}
+  .btn-main small{display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+  .btn-main:hover small{color:#cfc6b8}
+  .btn-main strong{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.01em}
+  .arrow{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none;transition:background .2s,color .2s}
+  .btn-main:hover .arrow{background:#fff;color:var(--ink)}
+
+  .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+  .quick a{text-align:center;padding:13px 6px;border:1px solid var(--line);background:var(--card);
+    font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;transition:border-color .2s, background .2s}
+  .quick a:hover{border-color:var(--ink);background:#fff}
+
+  /* SECTION */
+  .head{display:flex;align-items:baseline;justify-content:space-between;margin:44px 0 14px;gap:10px}
+  .head h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1}
+  .count{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+
+  .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -18px 16px;padding:0 18px}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;
+    font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:.2s}
+  .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+  .city{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700;
+    margin:22px 0 10px;display:flex;align-items:center;gap:12px}
+  .city::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  .store{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);
+    padding:16px;margin-bottom:10px;transition:border-color .2s, transform .2s}
+  .store:hover{border-color:var(--ink);transform:translateX(3px)}
+  .mono{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-size:19px;font-weight:600;background:var(--paper);border:1px solid var(--line)}
+  .mono.ns{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .mono.gb{border-radius:0;border:0;background:none;width:48px;height:48px}
+  .mono.gb{border:1px solid var(--ink)}
+  .mono.gb img,.mono.gb svg{width:100%;height:100%;display:block}
+  .info{flex:1;min-width:0}
+  .brand{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .name{font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.15}
+  .addr{font-size:14px;color:var(--muted);margin-top:3px}
+  .go{flex:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .go span.pin{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:.2s}
+  .store:hover .pin{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .hidden{display:none}
+
+  /* CONTACTS */
+  .contacts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:34px}
+  .contacts a{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;
+    font-size:13px;font-weight:700;letter-spacing:.06em;border:1px solid var(--line);background:var(--card);transition:.2s}
+  .contacts a.wa{background:var(--wa);color:#fff;border-color:var(--wa)}
+  .contacts a:hover{transform:translateY(-2px)}
+
+  .banner{margin-top:34px;background:var(--ink);color:#fff;padding:26px 22px;text-align:center}
+  .banner h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15}
+  .banner p{color:#bdb5a8;font-size:14px;margin:6px 0 16px;font-weight:300}
+  .banner a{display:inline-block;background:#fff;color:var(--ink);padding:12px 26px;font-size:12px;
+    letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+
+  footer{text-align:center;font-size:11px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:34px}
+  footer a{border-bottom:1px solid var(--line)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .fade{opacity:0;transform:translateY(10px);animation:in .6s ease forwards}
+    @keyframes in{to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="logo" src="assets/logo-gibiesse.png" width="193" height="34" alt="Gibiesse"
+       onerror="this.outerHTML='<div class=&quot;logo-fallback&quot;>GIBIESSE</div>'">
+  <div class="sub">Gibiesse · Niky Scuderi</div>
+  <h1>Vieni a <em>trovarci</em><br>in negozio</h1>
+  <p>8 punti vendita tra Viterbo e Civita Castellana. O acquista comodamente online.</p>
+</header>
+
+<main class="wrap">
+  <section class="shop fade">
+    <a class="btn-main" href="https://gibiessestore.it/?utm_source=instagram&utm_medium=bio&utm_campaign=sedi">
+      <div><small>Shop online</small><strong>gibiessestore.it</strong></div>
+      <span class="arrow" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </a>
+    <nav class="quick" aria-label="Categorie">
+      <a href="https://gibiessestore.it/pages/donna?utm_source=instagram&utm_medium=bio">Donna</a>
+      <a href="https://gibiessestore.it/pages/uomo?utm_source=instagram&utm_medium=bio">Uomo</a>
+      <a href="https://gibiessestore.it/collections/gift-card?utm_source=instagram&utm_medium=bio">Gift card</a>
+    </nav>
+  </section>
+
+  <section id="sedi">
+    <div class="head">
+      <h2>Le nostre sedi</h2>
+      <span class="count" id="count">8 punti vendita</span>
+    </div>
+
+    <div class="chips" role="group" aria-label="Filtra per città">
+      <button class="chip" aria-pressed="true" data-f="all">Tutte</button>
+      <button class="chip" aria-pressed="false" data-f="Viterbo">Viterbo</button>
+      <button class="chip" aria-pressed="false" data-f="Civita Castellana">Civita Castellana</button>
+    </div>
+
+    <div id="list"></div>
+  </section>
+
+  <section class="contacts">
+    <a class="wa" href="https://wa.me/393486018712">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+      WhatsApp
+    </a>
+    <a href="https://gibiessestore.it/pages/contatti">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+      Contatti
+    </a>
+  </section>
+
+  <section class="banner">
+    <h3>Il tuo stile, anche online</h3>
+    <p>Spedizione e reso semplici. Scopri le nuove collezioni.</p>
+    <a href="https://gibiessestore.it/?utm_source=instagram&utm_medium=bio&utm_campaign=banner">Acquista ora</a>
+  </section>
+
+  <footer>
+    © Gibiesse · <a href="https://gibiessestore.it/">gibiessestore.it</a>
+  </footer>
+</main>
+
+<script>
+  const stores = [
+    { brand:"Gibiesse",     addr:"Corso Italia 93/95",                              city:"Viterbo" },
+    { brand:"Marella",      addr:"Corso Italia 75",                                 city:"Viterbo" },
+    { brand:"Niky Scuderi", addr:"Corso Italia 25",                                 city:"Viterbo" },
+    { brand:"Gibiesse",     addr:"Centro Commerciale Tuscia",                       city:"Viterbo" },
+    { brand:"Niky Scuderi", addr:"Centro Commerciale Tuscia",                       city:"Viterbo" },
+    { brand:"Niky Scuderi", addr:"Via Igino Garbini 107 · C.C. Spazio Conad",       city:"Viterbo" },
+    { brand:"Niky Scuderi", addr:"Via Giuseppe Mazzini 2 · C.C. Piazza Marcantoni", city:"Civita Castellana" }
+  ];
+  // Logo GB (public/assets/logo-gb.webp)
+  const GB = `<img src="assets/logo-gb.webp" alt="" width="48" height="48">`;
+  // Logo Marella ridisegnato in vettoriale dalla M fornita
+  const M = `<svg viewBox="227 222 800 800" aria-hidden="true">
+    <rect x="227" y="222" width="800" height="800" fill="#fff"/>
+    <path fill="#0a0a0a" d="M329 317 626 626 926 317V927H836V540L626 767 418 540V927H329Z"/>
+  </svg>`;
+  const mono = b => b === "Marella" ? M : GB;
+  const maps = s => "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(`${s.brand} ${s.addr}, ${s.city}`);
+  const pin = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+
+  const list = document.getElementById("list");
+  const cities = [...new Set(stores.map(s => s.city))];
+  list.innerHTML = cities.map(c => `
+    <div class="group" data-city="${c}">
+      <div class="city">${c}</div>
+      ${stores.filter(s => s.city === c).map((s,i) => `
+        <a class="store fade" style="animation-delay:${i*60}ms" href="${maps(s)}" target="_blank" rel="noopener">
+          <span class="mono gb">${mono(s.brand)}</span>
+          <span class="info">
+            <span class="name" style="display:block">${s.brand}</span>
+            <span class="addr" style="display:block">${s.addr}</span>
+          </span>
+          <span class="go"><span class="pin">${pin}</span>Mappa</span>
+        </a>`).join("")}
+    </div>`).join("");
+
+  document.querySelectorAll(".chip").forEach(btn => btn.addEventListener("click", () => {
+    const f = btn.dataset.f;
+    document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b === btn));
+    let n = 0;
+    document.querySelectorAll(".group").forEach(g => {
+      const show = f === "all" || g.dataset.city === f;
+      g.classList.toggle("hidden", !show);
+      if (show) n += g.querySelectorAll(".store").length;
+    });
+    document.getElementById("count").textContent = n + (n === 1 ? " punto vendita" : " punti vendita");
+  }));
+</script>
+</body>
+</html>
